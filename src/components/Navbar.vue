@@ -42,5 +42,15 @@ export default {
 .router-link-active {
   border:2px solid red;
 }
+nav {
+    position: fixed !important;
+    padding-top: 7px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: white;
+}
 </style>
+
 
