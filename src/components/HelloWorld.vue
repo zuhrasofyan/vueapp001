@@ -1,10 +1,11 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>YELLO</h2>
+    <h2>PILIH Presiden RI 2019 yaa:</h2>
     <ul>
-      <li v-for="user in users">
-        {{user.firstname}} {{user.lastname}}
+      <!-- It is a necessary to use :key if the iteration is not simple to gain better performance. -->
+      <li v-for="user in users" :key="user.no">
+        ({{user.no}}){{user.firstname}} {{user.lastname}}
       </li>
     </ul>
     <div>
@@ -24,27 +25,29 @@
         Show Toast
       </button>
     </div>
-    
   </div>
-
 </template>
 
 <script>
+import Icon from 'vue-awesome/components/Icon';
+
 export default {
   name: 'HelloWorld',
+  components: Icon,
   data() {
     return {
       msg: 'Selamat Datang',
       users: [
-        { firstname: 'Zuhra', lastname: 'Sofyan' },
-        { firstname: 'Gatot', lastname: 'Nurmantyo' },
-        { firstname: 'Tito', lastname: 'Karnavian' },
-        { firstname: 'Prabowo', lastname: 'Subiyanto' },
+        { no: 1, firstname: 'Zuhra', lastname: 'Sofyan' },
+        { no: 2, firstname: 'Gatot', lastname: 'Nurmantyo' },
+        { no: 3, firstname: 'Tito', lastname: 'Karnavian' },
+        { no: 4, firstname: 'Prabowo', lastname: 'Subiyanto' },
       ],
       input_val: '',
       counter: 0,
     };
   },
+
 };
 </script>
 

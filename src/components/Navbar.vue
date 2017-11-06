@@ -26,7 +26,9 @@
         <div class="level-right">
             <p class="level-item"><strong><router-link to="/" exact>Home</router-link></strong></p>
             <p class="level-item"><strong><router-link to="/about">About</router-link></strong></p>
-            <p class="level-item"><strong><router-link to="/about">Coins</router-link></strong></p>
+            <p class="level-item"><strong><router-link to="/product">Product</router-link></strong></p>
+            <p class="level-item"><strong><router-link to="/coins/ethereum">Ethereum</router-link></strong></p>
+            <p class="level-item"><strong><router-link to="/coins/bitcoin">Bitcoin</router-link></strong></p>
             <p class="level-item"><a class="button is-success">New</a></p>
         </div>
     </nav>
@@ -42,7 +44,7 @@ export default {
 .router-link-active {
   border:2px solid red;
 }
-nav {
+/* nav {
     position: fixed !important;
     padding-top: 7px;
     top: 0;
@@ -50,7 +52,7 @@ nav {
     right: 0;
     z-index: 1;
     background-color: white;
-}
+} */
 </style>
 
 
