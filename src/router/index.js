@@ -3,7 +3,7 @@ import Router from 'vue-router';
 import HelloWorld from '@/components/HelloWorld';
 import About from '@/components/About';
 import Coins from '@/components/Coins';
-import ProductList from '@/components/ProductList';
+import ManageProducts from '@/components/ManageProducts';
 
 Vue.use(Router);
 
@@ -26,8 +26,8 @@ export default new Router({
     },
     {
       path: '/product',
-      name: 'ProductList',
-      component: ProductList,
+      name: 'ManageProducts',
+      component: ManageProducts,
     },
   ],
 });

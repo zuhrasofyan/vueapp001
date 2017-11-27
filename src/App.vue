@@ -1,8 +1,12 @@
 <template>
   <div id="app">
-    <Navbar></Navbar>
-    <img src="./assets/logo.png">
-    <router-view/>
+    <div class="columns">
+      <div class="column">
+        <Navbar></Navbar>
+        <img src="./assets/logo.png">
+        <router-view/>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -24,6 +28,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  margin-left: 10px;
+  margin-right: 10px;
   /* margin-top: 50px; */
 }
 </style>
