@@ -22,6 +22,7 @@
       <div class="field">
         <div class="control">
           <button type="submit" @click.prevent="onSubmit" class="button is-primary">Save Product</button>
+          <button type="submit" v-if="product.id" @click.prevent="onCancel" class="button">Cancel</button>
         </div>
       </div>
     </div>
@@ -34,6 +35,9 @@ export default {
   methods: {
     onSubmit() {
       this.$emit('submit', this.product);
+    },
+    onCancel() {
+      this.$emit('cancel');
     },
   },
 };

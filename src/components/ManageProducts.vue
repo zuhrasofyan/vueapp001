@@ -3,10 +3,12 @@
     <save-product-form
       :product="productInForm"
       @submit="onFormSave"
+      v-on:cancel="resetProductInForm"
     ></save-product-form>
     <product-list
-      :products="products">
-    </product-list>
+      :products="products"
+      v-on:edit="onEditClicked"
+    ></product-list>
   </section>
 </template>
 
@@ -56,17 +58,27 @@ export default {
   data: initialData,
   methods: {
     onFormSave(product) {
-      // // eslint-disable-next-line no-console
-      // console.log('product', JSON.stringify(product));
-      // Generate an id using the third-party lib 'uuid'
-      product.id = uuid.v4();  // eslint-disable-line no-param-reassign
-      // add it to the product list
-      this.products.push(product);
-      // reset the form
+      const index = this.products.findIndex(p => p.id === product.id);
+      // update product if it exists or create it if it doesn't
+      if (index !== -1) {
+        // We need to replace the array entirely so that vue can recognize
+        // the change and re-render entirely.
+        // See http://vuejs.org/guide/list.html#Caveats
+        this.products.splice(index, 1, product);
+      } else {
+        product.id = uuid.v4(); // eslint-disable-line no-param-reassign
+        this.products.push(product);
+      }
       this.resetProductInForm();
     },
     resetProductInForm() {
       this.productInForm = initialData().productInForm;
+    },
+    onEditClicked(product) {
+      // since objects are passed by reference we need to clone the product
+      // either by using Object.assign({}, product) or by using object
+      // spread like we do here.
+      this.productInForm = { ...product };
     },
   },
 };
