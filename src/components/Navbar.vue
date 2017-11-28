@@ -42,7 +42,8 @@ export default {
 
 <style>
 .router-link-active {
-  border:2px solid red;
+    color: #363636;
+  /* border:2px solid red; */
 }
 /* nav {
     position: fixed !important;

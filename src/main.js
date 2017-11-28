@@ -3,14 +3,11 @@
 import Vue from 'vue';
 import Buefy from 'buefy';
 import 'buefy/lib/buefy.css';
-import 'vue-awesome/icons';
-import Icon from 'vue-awesome/components/Icon';
 import App from './App';
 import router from './router';
 
 Vue.config.productionTip = false;
 Vue.use(Buefy);
-Vue.component('icon', Icon);
 
 /* eslint-disable no-new */
 new Vue({

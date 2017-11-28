@@ -6,6 +6,10 @@
       </p>
       <div class="hore">
         game game
+        <b-icon
+          icon="home"
+          size="is-small">
+        </b-icon>
       </div>
   </div>
 </template>
