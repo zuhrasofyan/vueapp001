@@ -40,7 +40,7 @@
       </div> -->
       <div class="field">
         <div class="control">
-          <button type="submit" @click.prevent="onSubmit" class="button is-primary">Save Product</button>
+          <button type="submit" @click.prevent="onSubmit" class="button is-primary">{{product.id ? 'Update' : 'Add'}} Product</button>
           <button type="submit" v-if="product.id" @click.prevent="onCancel" class="button">Cancel</button>
         </div>
       </div>

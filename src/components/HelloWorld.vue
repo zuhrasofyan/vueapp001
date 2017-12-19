@@ -29,11 +29,9 @@
 </template>
 
 <script>
-import Icon from 'vue-awesome/components/Icon';
 
 export default {
   name: 'HelloWorld',
-  components: Icon,
   data() {
     return {
       msg: 'Selamat Datang',
