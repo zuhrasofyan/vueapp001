@@ -8,6 +8,8 @@
     <product-list
       :products="products"
       v-on:edit="onEditClicked"
+      v-on:remove="onRemoveClicked"
+      test="helow"
     ></product-list>
   </section>
 </template>
@@ -79,6 +81,13 @@ export default {
       // either by using Object.assign({}, product) or by using object
       // spread like we do here.
       this.productInForm = { ...product };
+    },
+    onRemoveClicked(productId) {
+      const index = this.products.findIndex(p => p.id === productId);
+      this.products.splice(index, 1);
+      if (productId === this.productInForm.id) {
+        this.resetProductInForm();
+      }
     },
   },
 };
