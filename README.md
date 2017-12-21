@@ -1,6 +1,8 @@
 # vueapp001
 
 > https://medium.com/codingthesmartway-com-blog/vue-js-2-quickstart-tutorial-2017-246195cfbdd2
+combined with 
+> https://jayway.github.io/vue-js-workshop/
 
 ## Build Setup
 
